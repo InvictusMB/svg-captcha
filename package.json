@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha test/test.js",
     "lint": "xo",
-    "test:visual": "node test/visual.js"
+    "test:visual": "node test/visual.js",
+    "release": "babel ./lib --out-dir ./dist",
+    "prepublish": "npm run release"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
     "url": "weilinshi.org"
   },
   "engines": {
-    "node": ">=4.x"
+    "node": ">=0.12.x"
   },
   "license": "MIT",
   "bugs": {
@@ -36,6 +38,8 @@
     "opentype.js": "^0.6.9"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.2",
     "fs-extra": "^2.1.2",
     "mocha": "^3.2.0",
     "xo": "^0.18.1"
@@ -49,7 +53,7 @@
   "typings": "index.d.ts",
   "files": [
     "fonts/*",
-    "lib/*",
+    "dist/*",
     "index.d.ts",
     "*.md"
   ]
